@@ -7,7 +7,7 @@
 - ณัฐภัทร เลาว้าง
 
 ## ลิงก์ดาวน์โหลดและเอกสาร
-- [ไฟล์.apk](https://github.com/Supanat30/app_chat/releases/tag/v1.2)
+- [ไฟล์.apk](https://github.com/Supanat30/project_app_chat/releases/tag/v.10)
 - [รายงาน PDF](docs/report.pdf)
 - [วิดีโอแนะนำแอปพลิเคชัน (15–30 วินาที)](https://youtu.be/xxxxxxx)
 
