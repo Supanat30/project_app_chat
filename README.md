@@ -4,7 +4,7 @@
 
 ## ผู้จัดทำ
 - ศุภณัฐ ชมศรี [@Supanat30](https://github.com/Supanat30)
-- 
+- ณัฐภัทร เลาว้าง
 
 ## ลิงก์ดาวน์โหลดและเอกสาร
 - [ไฟล์.apk](https://github.com/Supanat30/app_chat/releases/tag/v1.2)
