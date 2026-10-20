@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     try {
       await Supabase.initialize(
         url: 'https://lrjhdamxqpetkyldrnjg.supabase.co',
-        anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyamhkYW14cXBldGt5bGRybmpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxMjQzMDAsImV4cCI6MjEwNzcwMDMwMH0.Cq3uZ6y5rLU3TQ2x0ik5CSbF4HVGVXypGSs-Bmlq2oM',
+        anonKey: 'sb_publishable_5qi19yjpFGjN56oL7iy6eg_w_vTzOBh',
       );
       if (mounted) {
         setState(() {
