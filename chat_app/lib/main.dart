@@ -3,6 +3,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'screens/login_screen.dart';
 import 'screens/user_list_screen.dart';
 
+final supabase = Supabase.instance.client;
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -29,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     try {
       await Supabase.initialize(
         url: 'https://lrjhdamxqpetkyldrnjg.supabase.co',
-        anonKey: 'วาง_ANON_KEY_ขนาดยาวที่ขึ้นต้นด้วย_ey_ตรงนี้',
+        anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyamhkYW14cXBldGt5bGRybmpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxMjQzMDAsImV4cCI6MjEwNzcwMDMwMH0.Cq3uZ6y5rLU3TQ2x0ik5CSbF4HVGVXypGSs-Bmlq2oM',
       );
       if (mounted) {
         setState(() {
