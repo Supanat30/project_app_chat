@@ -3,19 +3,47 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'screens/login_screen.dart';
 import 'screens/user_list_screen.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Supabase.initialize(
-    url: 'https://lrjhdamxqpetkyldrnjg.supabase.co',
-    anonKey: 'sb_publishable_5qi19yjpFGjN56oL7iy6eg_w_vTzOBh',
-  );
   runApp(const MyApp());
 }
 
-final supabase = Supabase.instance.client;
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isInitialized = false;
+  String? _errorMessage;
+
+  @override
+  void initState() {
+    super.initState();
+    _initApp();
+  }
+
+  Future<void> _initApp() async {
+    try {
+      await Supabase.initialize(
+        url: 'https://lrjhdamxqpetkyldrnjg.supabase.co',
+        anonKey: 'วาง_ANON_KEY_ขนาดยาวที่ขึ้นต้นด้วย_ey_ตรงนี้',
+      );
+      if (mounted) {
+        setState(() {
+          _isInitialized = true;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _errorMessage = e.toString();
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +71,24 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: supabase.auth.currentUser == null
-          ? const LoginScreen()
-          : const UserListScreen(),
+      home: !_isInitialized
+          ? Scaffold(
+              body: Center(
+                child: _errorMessage != null
+                    ? Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          'เกิดข้อผิดพลาดในการเชื่อมต่อ:\n$_errorMessage',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(color: Colors.red),
+                        ),
+                      )
+                    : const CircularProgressIndicator(),
+              ),
+            )
+          : (Supabase.instance.client.auth.currentUser == null
+              ? const LoginScreen()
+              : const UserListScreen()),
     );
   }
 }
