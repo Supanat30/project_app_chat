@@ -8,7 +8,7 @@
 
 ## ลิงก์ดาวน์โหลดและเอกสาร
 - [ไฟล์.apk](https://github.com/Supanat30/app_chat/releases/tag/v1.2)
-- [รายงาน PDF](docs/report.pdf)
+- [รายงาน PDF](docs/รายงานโครงงานในรายวิชา การพัฒนาโปรแกรมประยุกต์สำหรับอุปกรณ์เคลื่อนที่.pdf)
 - [วิดีโอแนะนำแอปพลิเคชัน (15–30 วินาที)](https://youtu.be/xxxxxxx)
 
 ## ภาพหน้าจอการทำงาน (Screenshots)
