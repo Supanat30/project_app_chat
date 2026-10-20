@@ -206,53 +206,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
 
-            const SizedBox(height: 16),
-
-            Container(
-              padding: const EdgeInsets.all(18),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.02),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: const Column(
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.code_rounded, color: Color(0xFF4F46E5), size: 22),
-                      SizedBox(width: 10),
-                      Text(
-                        'ข้อมูลโปรเจกต์',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                      ),
-                    ],
-                  ),
-                  Divider(height: 24, thickness: 0.6),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('เวอร์ชันแอป', style: TextStyle(color: Color(0xFF64748B))),
-                      Text('v1.0.0 (Release)', style: TextStyle(fontWeight: FontWeight.w600)),
-                    ],
-                  ),
-                  SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('พัฒนาด้วย', style: TextStyle(color: Color(0xFF64748B))),
-                      Text('Flutter & Supabase', style: TextStyle(fontWeight: FontWeight.w600)),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
             const SizedBox(height: 24),
 
             SizedBox(
