@@ -9,7 +9,7 @@
 ## ลิงก์ดาวน์โหลดและเอกสาร
 - [ไฟล์.apk](https://github.com/Supanat30/project_app_chat/releases/tag/v.10)
 - [รายงาน PDF](docs/report.pdf)
-- [วิดีโอแนะนำแอปพลิเคชัน (15–30 วินาที)]([https://youtu.be/xxxxxxx](https://drive.google.com/file/d/1y1i1tk9417R2fum9XLI5nnNZqPE8kmNY/view?usp=sharing))
+- [วิดีโอแนะนำแอปพลิเคชัน (15–30 วินาที)](https://drive.google.com/file/d/1y1i1tk9417R2fum9XLI5nnNZqPE8kmNY/view?usp=sharing)
 
 ## ภาพหน้าจอการทำงาน (Screenshots)
 <p align="center">
