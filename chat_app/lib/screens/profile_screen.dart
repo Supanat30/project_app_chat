@@ -85,6 +85,73 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
+  Widget _buildMemberRow({
+    required BuildContext context,
+    required String name,
+    required String studentId,
+    required String imageUrl,
+  }) {
+    final primaryColor = Theme.of(context).colorScheme.primary;
+
+    return Row(
+      children: [
+        Container(
+          width: 54,
+          height: 54,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: const Color(0xFFEEF2FF), width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 6,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: ClipOval(
+            child: Image.asset(
+              imageUrl,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: const Color(0xFFEEF2FF),
+                  alignment: Alignment.center,
+                  child: Icon(Icons.person, color: primaryColor, size: 28),
+                );
+              },
+            ),
+          ),
+        ),
+        const SizedBox(width: 14),
+
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF1E293B),
+                ),
+              ),
+              const SizedBox(height: 3),
+              Text(
+                'รหัส: $studentId',
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Color(0xFF64748B),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   void dispose() {
     _usernameController.dispose();
@@ -104,13 +171,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             const SizedBox(height: 10),
+
             Center(
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
+                    width: 90,
+                    height: 90,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: LinearGradient(
@@ -132,7 +200,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ? _usernameController.text[0].toUpperCase()
                         : 'U',
                     style: const TextStyle(
-                      fontSize: 40,
+                      fontSize: 36,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -140,12 +208,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
             Text(
               _email,
-              style: const TextStyle(fontSize: 14, color: Color(0xFF64748B)),
+              style: const TextStyle(fontSize: 13, color: Color(0xFF64748B)),
             ),
-            const SizedBox(height: 28),
+            const SizedBox(height: 24),
 
             Container(
               padding: const EdgeInsets.all(20),
@@ -165,9 +233,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   const Text(
                     'ข้อมูลบัญชี',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 14),
                   TextField(
                     controller: _usernameController,
                     decoration: InputDecoration(
@@ -181,17 +249,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 14),
                   SizedBox(
                     width: double.infinity,
-                    height: 48,
+                    height: 46,
                     child: ElevatedButton.icon(
                       onPressed: _isLoading ? null : _updateUsername,
-                      icon: const Icon(Icons.save_rounded, size: 20),
+                      icon: const Icon(Icons.save_rounded, size: 18),
                       label: _isLoading
                           ? const SizedBox(
-                              width: 20,
-                              height: 20,
+                              width: 18,
+                              height: 18,
                               child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
                             )
                           : const Text('บันทึกการแก้ไข'),
@@ -201,6 +269,55 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       ),
                     ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 18),
+
+            Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.02),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Row(
+                    children: [
+                      Icon(Icons.people_alt_rounded, color: Color(0xFF4F46E5), size: 20),
+                      SizedBox(width: 8),
+                      Text(
+                        'คณะผู้จัดทำ',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Color(0xFF1E293B)),
+                      ),
+                    ],
+                  ),
+                  const Divider(height: 22, thickness: 0.6),
+
+                  _buildMemberRow(
+                    context: context,
+                    name: 'ศุภณัฐ ชมศรี',
+                    studentId: '016830641014-8',
+                    imageUrl: 'assets/images/sho.jpg',
+                  ),
+
+                  const SizedBox(height: 14),
+
+                  _buildMemberRow(
+                    context: context,
+                    name: 'ณัฐภัทร เลาว้าง',
+                    studentId: '016830641016-3',
+                    imageUrl: 'assets/images/ball.jpg',
                   ),
                 ],
               ),
