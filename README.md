@@ -4,11 +4,11 @@
 
 ## ผู้จัดทำ
 - ศุภณัฐ ชมศรี [@Supanat30](https://github.com/Supanat30)
-- ณัฐภัทร เลาว้าง
+- ณัฐภัทร เลาว้าง [@ballexilez](https://github.com/ballexilez-dev)
 
 ## ลิงก์ดาวน์โหลดและเอกสาร
-- [ไฟล์.apk](https://github.com/Supanat30/app_chat/releases/tag/v1.2)
-- [รายงาน PDF](docs/รายงานโครงงานในรายวิชา การพัฒนาโปรแกรมประยุกต์สำหรับอุปกรณ์เคลื่อนที่.pdf)
+- [ไฟล์.apk](https://github.com/Supanat30/project_app_chat/releases/tag/v.10)
+- [รายงาน PDF](docs/report.pdf)
 - [วิดีโอแนะนำแอปพลิเคชัน (15–30 วินาที)](https://youtu.be/xxxxxxx)
 
 ## ภาพหน้าจอการทำงาน (Screenshots)
